@@ -8,7 +8,7 @@ pre : " <b> 2.3 </b> "
 
 #### Tạo EC2 Keypair
 
-1. Ở mục tìm kiếm, nhập ```EC2```, chọn **EC2**.
+1. Ở thanh tìm kiếm, nhập ```EC2```, chọn **EC2**.
 
 ![0001](/images/2-ElasticBeanstalk/2.3-CreateKeypair/0001.svg)
 

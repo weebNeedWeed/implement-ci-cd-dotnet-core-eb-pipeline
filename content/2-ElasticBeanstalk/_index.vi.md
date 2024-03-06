@@ -21,5 +21,10 @@ Trong phần này, ta sẽ cùng tìm hiểu và triển khai một High Availab
 
 #### Nội dung
 
-1. [Tạo VPC]()
+1. [Tạo VPC](2.1-createvpc/)
+2. [Bật Public IP cho Public Subnet](2.2-enablepublicip/)
+3. [Tạo EC2 Keypair](2.3-createkeypair/)
+4. [Tạo EC2 Instance Profile](2.4-instanceprofile/)
+5. [Triển khai Environment](2.5-createenv/)
+6. [Kiểm tra Environment](2.6-testenv/)
 
