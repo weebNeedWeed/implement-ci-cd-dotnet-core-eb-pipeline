@@ -1,26 +1,43 @@
 ---
-title : "Firewall in VPC"
-date : "`r Sys.Date()`"
-weight : 2
+title : "Create a VPC"
+date :  "`r Sys.Date()`" 
+weight : 1
 chapter : false
-pre : " <b> 2. </b> "
+pre : " <b> 2.1 </b> "
 ---
 
-## Firewall in VPC
+#### Create a new VPC
 
-In this section, we will learn about the basic security features in Amazon VPC, such as the Security Group firewall feature and Network Access Control Lists.
+{{% notice info %}}
+Before starting ,you need to choose one region deploy AWS services, all resources in this lab is created in region **Singapore (ap-southeast-1)**.
+{{% /notice %}}
 
-### Security Groups
+1. Search and select ```VPC``.
 
-A **Security Group** acts as a virtual firewall for an EC2 Instance, allowing control over network traffic. In a VPC, an Instance can be assigned up to 5 Security Groups. It's important to note that Security Groups operate at the Instance layer and not at the Subnet layer.
+![0002](/images/2-ElasticBeanstalk/2.1-CreateVPC/0002.svg)
 
-> **Note:** Security Groups function at the virtual machine level, rather than the subnet level. However, each virtual machine within a subnet can be assigned to different security groups.
+2. In **Resource to create** section, select **VPC and more**
+* Select **Auto-generate** and type ``fcj-aws`` for **Name tag auto-generation**.
 
-### Network ACLs
+![0003](/images/2-ElasticBeanstalk/2.1-CreateVPC/0003.svg)
 
-A **Network Access Control List (ACL)** is an optional security layer for VPCs. It acts as a firewall to manage incoming and outgoing traffic for one or more subnets. Network ACLs can be configured with the same rules as security groups, providing an additional layer of security to the VPC.
+3. Enter ``10.10.0.0/16`` for **IPv4 CIDR Block**.
 
-### Contents
+![0004](/images/2-ElasticBeanstalk/2.1-CreateVPC/0004.svg)
 
-- [Security Groups](2.1-securitygroup/)
-- [Network ACLs](2.2-networkacls/)
+4. Select 2 **AZ**, 2 **Public Subnet** and 2 **Private Subnet**.
+
+![0005](/images/2-ElasticBeanstalk/2.1-CreateVPC/0005.svg)
+
+5. In **NAT Gateways**, select **In 1 AZ**.
+* Select **None** for **VPC Endpoints**.
+
+![0006](/images/2-ElasticBeanstalk/2.1-CreateVPC/0006.svg)
+
+6. Click **Create VPC**.
+
+![0007](/images/2-ElasticBeanstalk/2.1-CreateVPC/0007.svg)
+
+7. Click **View VPC** to view your VPC after creation.
+
+![0008](/images/2-ElasticBeanstalk/2.1-CreateVPC/0008.svg)

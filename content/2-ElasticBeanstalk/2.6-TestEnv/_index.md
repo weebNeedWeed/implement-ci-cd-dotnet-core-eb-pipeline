@@ -1,26 +1,31 @@
 ---
-title : "Firewall in VPC"
-date : "`r Sys.Date()`"
-weight : 2
+title : "Test the Environment"
+date :  "`r Sys.Date()`" 
+weight : 6
 chapter : false
-pre : " <b> 2. </b> "
+pre : " <b> 2.6 </b> "
 ---
 
-## Firewall in VPC
+#### Test the Environment
 
-In this section, we will learn about the basic security features in Amazon VPC, such as the Security Group firewall feature and Network Access Control Lists.
+1. When successfully creation, the Environment has its **Health** status as **Ok**.
+* We can view our application by clicking on the DNS.
 
-### Security Groups
+![0001](/images/2-ElasticBeanstalk/2.6-TestEnv/0001.svg)
 
-A **Security Group** acts as a virtual firewall for an EC2 Instance, allowing control over network traffic. In a VPC, an Instance can be assigned up to 5 Security Groups. It's important to note that Security Groups operate at the Instance layer and not at the Subnet layer.
+![0002](/images/2-ElasticBeanstalk/2.6-TestEnv/0002.svg)
 
-> **Note:** Security Groups function at the virtual machine level, rather than the subnet level. However, each virtual machine within a subnet can be assigned to different security groups.
+2. Select the **Events** tab to view resources created or being creating.
 
-### Network ACLs
 
-A **Network Access Control List (ACL)** is an optional security layer for VPCs. It acts as a firewall to manage incoming and outgoing traffic for one or more subnets. Network ACLs can be configured with the same rules as security groups, providing an additional layer of security to the VPC.
+![0003](/images/2-ElasticBeanstalk/2.6-TestEnv/0003.svg)
 
-### Contents
+3. Select the **Health** tab to check for instance statuses.
 
-- [Security Groups](2.1-securitygroup/)
-- [Network ACLs](2.2-networkacls/)
+![0004](/images/2-ElasticBeanstalk/2.6-TestEnv/0004.svg)
+
+4. Select **Logs** then select **Request logs** > **Full** to fetch EC2 Instance log files.
+
+![0005](/images/2-ElasticBeanstalk/2.6-TestEnv/0005.svg)
+
+![0006](/images/2-ElasticBeanstalk/2.6-TestEnv/0006.svg)

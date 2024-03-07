@@ -21,7 +21,3 @@ pre : " <b> 2.2 </b> "
 ![0003](/images/2-ElasticBeanstalk/2.2-EnableIP/0003.svg)
 
 4. Lặp lại các bước trên với subnet ```fcj-aws-subnet-public2-*```.
-
-{{% notice note %}}
-Lặp lại các bước trên với subnet ```fcj-aws-subnet-public2-*``` để bật gán Public IP tự động cho các tài nguyên trong subnet này.
-{{% /notice %}}

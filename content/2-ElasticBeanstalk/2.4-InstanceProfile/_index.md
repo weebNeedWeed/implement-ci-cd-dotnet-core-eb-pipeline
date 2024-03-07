@@ -1,26 +1,41 @@
 ---
-title : "Firewall in VPC"
-date : "`r Sys.Date()`"
-weight : 2
+title : "Create EC2 Instance Profile"
+date :  "`r Sys.Date()`" 
+weight : 4
 chapter : false
-pre : " <b> 2. </b> "
+pre : " <b> 2.4 </b> "
 ---
 
-## Firewall in VPC
+#### Create a new EC2 Instance Profile
 
-In this section, we will learn about the basic security features in Amazon VPC, such as the Security Group firewall feature and Network Access Control Lists.
+1. Find ```IAM```, select **IAM**.
 
-### Security Groups
+![0001](/images/2-ElasticBeanstalk/2.4-InstanceProfile/0001.svg)
 
-A **Security Group** acts as a virtual firewall for an EC2 Instance, allowing control over network traffic. In a VPC, an Instance can be assigned up to 5 Security Groups. It's important to note that Security Groups operate at the Instance layer and not at the Subnet layer.
+2. Select **Roles** then click **Create role**.
 
-> **Note:** Security Groups function at the virtual machine level, rather than the subnet level. However, each virtual machine within a subnet can be assigned to different security groups.
+![0002](/images/2-ElasticBeanstalk/2.4-InstanceProfile/0002.svg)
 
-### Network ACLs
+3. Select **AWS Service** for **Trusted entity type**.
 
-A **Network Access Control List (ACL)** is an optional security layer for VPCs. It acts as a firewall to manage incoming and outgoing traffic for one or more subnets. Network ACLs can be configured with the same rules as security groups, providing an additional layer of security to the VPC.
+![0003](/images/2-ElasticBeanstalk/2.4-InstanceProfile/0003.svg)
 
-### Contents
+4. Scroll down and select **EC2**, then click **Next**.
 
-- [Security Groups](2.1-securitygroup/)
-- [Network ACLs](2.2-networkacls/)
+![0004](/images/2-ElasticBeanstalk/2.4-InstanceProfile/0004.svg)
+
+5. Find and select ```AWSElasticBeanstalkWebTier``` policy.
+
+![0005](/images/2-ElasticBeanstalk/2.4-InstanceProfile/0005.svg)
+
+6. Click **Next**.
+
+![0006](/images/2-ElasticBeanstalk/2.4-InstanceProfile/0006.svg)
+
+7. Enter ```fcj-aws-ec2-instance-profile``` for **Role name**.
+
+![0007](/images/2-ElasticBeanstalk/2.4-InstanceProfile/0007.svg)
+
+8. Click **Create role**.
+
+![0008](/images/2-ElasticBeanstalk/2.4-InstanceProfile/0008.svg)

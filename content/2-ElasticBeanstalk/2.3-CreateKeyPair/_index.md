@@ -1,26 +1,29 @@
 ---
-title : "Firewall in VPC"
-date : "`r Sys.Date()`"
-weight : 2
+title : "Create EC2 Keypair"
+date :  "`r Sys.Date()`" 
+weight : 3
 chapter : false
-pre : " <b> 2. </b> "
+pre : " <b> 2.3 </b> "
 ---
 
-## Firewall in VPC
+#### Create EC2 Keypair
 
-In this section, we will learn about the basic security features in Amazon VPC, such as the Security Group firewall feature and Network Access Control Lists.
+1. In search bar, type ```EC2```, select **EC2**.
 
-### Security Groups
+![0001](/images/2-ElasticBeanstalk/2.3-CreateKeypair/0001.svg)
 
-A **Security Group** acts as a virtual firewall for an EC2 Instance, allowing control over network traffic. In a VPC, an Instance can be assigned up to 5 Security Groups. It's important to note that Security Groups operate at the Instance layer and not at the Subnet layer.
+2. Scroll down to **Network & Security**, select **Key Pairs**.
 
-> **Note:** Security Groups function at the virtual machine level, rather than the subnet level. However, each virtual machine within a subnet can be assigned to different security groups.
+![0002](/images/2-ElasticBeanstalk/2.3-CreateKeypair/0002.svg)
 
-### Network ACLs
+3. Select **Create key pair**.
 
-A **Network Access Control List (ACL)** is an optional security layer for VPCs. It acts as a firewall to manage incoming and outgoing traffic for one or more subnets. Network ACLs can be configured with the same rules as security groups, providing an additional layer of security to the VPC.
+![0003](/images/2-ElasticBeanstalk/2.3-CreateKeypair/0003.svg)
 
-### Contents
+4. For **Name**, type ```aws-keypair```, select **.pem** for **Private key file format**. Click **Create key pair**.
 
-- [Security Groups](2.1-securitygroup/)
-- [Network ACLs](2.2-networkacls/)
+![0004](/images/2-ElasticBeanstalk/2.3-CreateKeypair/0004.svg)
+
+5. Successfully create a new keypair.
+
+![0005](/images/2-ElasticBeanstalk/2.3-CreateKeypair/0005.svg)

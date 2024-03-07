@@ -9,14 +9,13 @@ chapter : false
 
 #### Tổng quan
 
-Trong lab này, ta sẽ cùng nhau tìm hiểu những khái niệm cơ bản những dịch vụ cốt lõi về CI/CD của AWS là CodeBuild, CodeDeploy và CodePipeline; một dịch vụ khác giúp triển khai ứng dụng một cách nhanh chóng là Elastic Beanstalk. Đồng thời ta cũng sẽ thực hành sử dụng các dịch vụ trên với một ứng dụng API mẫu
+Trong lab này, ta sẽ cùng nhau tìm hiểu những khái niệm cơ bản những dịch vụ cốt lõi về CI/CD của AWS là CodeBuild, CodeDeploy và CodePipeline; một dịch vụ khác giúp triển khai ứng dụng một cách nhanh chóng là Elastic Beanstalk. Đồng thời ta cũng sẽ thực hành sử dụng các dịch vụ trên với một ứng dụng API mẫu.
+
+![Icon](/images/icon.svg)
 
 #### Nội dung
 
-1. [Giới thiệu VPC](1-introduce/)
-2. [Tường lửa trong VPC](2-firewallinvpc/)
-3. [Các bước chuẩn bị](3-prerequiste/) 
-4. [Tạo EC2 Server](4-createec2server/)
-5. [Cấu hình Site-to-Site VPN](5-vpnsitetosite/)
-6. [Dọn dẹp tài nguyên](6-cleanup/)
-
+1. [Giới thiệu](1-Introduction)
+2. [Triển khai Elastic Beanstalk Environment](2-ElasticBeanstalk)
+3. [Triển khai CodePipeline](3-CodePipeline)
+4. [Dọn dẹp tài nguyên](4-CleanUp)

@@ -6,21 +6,36 @@ chapter : false
 pre : " <b> 1. </b> "
 ---
 
-## Introduction to Amazon VPC
+#### AWS CodeBuild
 
-Amazon Virtual Private Cloud (Amazon VPC) is a **Virtual Private Cloud**—a customized virtual network hosted within the AWS Cloud and isolated from the external world. This concept resembles the design and implementation of a distinct standalone network environment in an on-premise data center, a practice still widely employed across many countries.
+**CodeBuild** is an AWS service that helps with the continuous integration flow. CodeBuild compiles, run unit-tests to ensure the source being ready for deployment to other services. With CodeBuild, we don't have to worry about the operation, management and scaling of build servers.
 
-Within this dedicated VPC, users possess comprehensive control over their virtual network environment. This control encompasses the initiation and operation of AWS resources, the ability to choose IP address ranges, establish network subnets, and configure routing tables and network gateways. Secure and convenient resource and application access within the VPC is facilitated through both IPv4 and IPv6 protocols.
+CodeBuild nowadays supports many languages like C#, Java, Javascript, etc. CodeBuild also has prepared build tools like Maven and Gradle or some popular platforms like Docker and Android.
 
-The term "Region" refers to vast clusters of AWS data centers situated within specific territories. Multiple VPCs can be established within a single region, with each VPC differentiated by its unique IP address space range. The IPv4 address range is defined by selecting a Classless Inter-Domain Routing (CIDR) notation, such as 10.0.0.0/16. Once created, the Amazon VPC address range remains immutable. These ranges can span from as extensive as /16 (equivalent to 65536 available addresses) to as limited as /28 (allowing for 16 available addresses). Crucially, these ranges must not overlap with any other connected networks.
+#### AWS CodeDeploy
 
-The Amazon VPC service was introduced subsequent to the launch of Amazon EC2. Consequently, AWS provided two distinct networking platforms for a period: EC2-Classic and EC2-VPC. EC2-Classic established a single flat network where all Amazon EC2 instances operated, enabling shared connectivity among AWS clients. However, as of December 2013, AWS exclusively supports EC2-VPC. Each region includes a default VPC along with a default subnet featuring a CIDR block of 172.31.0.0/16.
+**CodeDeploy** automates deployment to AWS Services like EC2, Lambda, Fargate or even on-premises environments with 2 primary deployment types: **In-place deployment** and **Blue/green deployment**.
 
-## Contents
+#### AWS CodePipeline
 
-- [Subnets](1.1-subnets/)
-- [Route Table](1.2-routetable/)
-- [Internet Gateway](1.3-internetgateway/)
-- [NAT Gateway](1.4-natgateway/)
+**CodePipeline** is an continuous delivery service that can be used to model, virtualize and automate application deployment steps. When using with CodeBuild, we will have a fully-automated model of build-test-release workflow.
 
-In the following sections, we will delve into the fundamental concepts of VPC.
+#### AWS Elastic Beanstalk
+
+**Elastic Beanstalk** is a PaaS(Platform as a service) service facilitating the deployment and management of our applications. When the developers initializes a new **Environment**, Elastic Beanstalk will create other resources like **EC2**, **Elastic Load Balancer**, **Auto Scaling Group**, etc... to make our applications high availability without developer worrying about the management issues.
+
+Some **benefits** of **Elastic Beanstalk**:
+
+1. Deploy and manage applications without worrying about infrastructure, load balancing, scaling, etc.
+2. **Multiple environments**: Elastic Beanstalk supports deployment to many environments, so we could have our applications to live on certain environments like Production, Development, Staging, etc.
+3. Support various languages and platforms.
+4. Cost optimization.
+
+![Architecture](/images/1-Introduction/0001.svg)
+
+With the above architecture model, we have the workflow as follows:
+
+1. When developers commit their changes and push them to the remote repository, CodePipeline will fetch those changes and upload to S3 Bucket as **Source Artifacts**. This step is called **Source State**.
+2. In **Build Stage**, CodeBuild uses Build Artifacts uploaded to S3 Bucket to compile and run tests. After that, CodeBuild will upload **Build Artifacts** to S3 Bucket.
+3. Finally, in **Deploy Stage**, Build Artifact is uploaded to **Elastic Beanstalk Environment**. Beanstalk will automatically update the application.
+4. Users can access to the application through AWS Route53 DNS.

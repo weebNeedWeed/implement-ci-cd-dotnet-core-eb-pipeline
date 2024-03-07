@@ -1,7 +1,7 @@
 ---
 title : "Triển khai Elastic Beanstalk Environment"
 date :  "`r Sys.Date()`" 
-weight : 1 
+weight : 2
 chapter : false
 pre : " <b> 2. </b> "
 ---

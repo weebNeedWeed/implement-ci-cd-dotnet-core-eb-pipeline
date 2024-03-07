@@ -1,26 +1,23 @@
 ---
-title : "Firewall in VPC"
-date : "`r Sys.Date()`"
+title : "Enable auto-assign public IPv4 address"
+date :  "`r Sys.Date()`" 
 weight : 2
 chapter : false
-pre : " <b> 2. </b> "
+pre : " <b> 2.2 </b> "
 ---
 
-## Firewall in VPC
+#### Enable auto-assign public IPv4 address
 
-In this section, we will learn about the basic security features in Amazon VPC, such as the Security Group firewall feature and Network Access Control Lists.
+1. Go to **VPC**, select **Subnets**, choose subnet ```fcj-aws-subnet-public1-*```.
 
-### Security Groups
+![0001](/images/2-ElasticBeanstalk/2.2-EnableIP/0001.svg)
 
-A **Security Group** acts as a virtual firewall for an EC2 Instance, allowing control over network traffic. In a VPC, an Instance can be assigned up to 5 Security Groups. It's important to note that Security Groups operate at the Instance layer and not at the Subnet layer.
+2. Click **Actions** then click **Edit subnet settings**.
 
-> **Note:** Security Groups function at the virtual machine level, rather than the subnet level. However, each virtual machine within a subnet can be assigned to different security groups.
+![0002](/images/2-ElasticBeanstalk/2.2-EnableIP/0002.svg)
 
-### Network ACLs
+3. Check **Enable auto-assign public IPv4 address**, then click **Save**.
 
-A **Network Access Control List (ACL)** is an optional security layer for VPCs. It acts as a firewall to manage incoming and outgoing traffic for one or more subnets. Network ACLs can be configured with the same rules as security groups, providing an additional layer of security to the VPC.
+![0003](/images/2-ElasticBeanstalk/2.2-EnableIP/0003.svg)
 
-### Contents
-
-- [Security Groups](2.1-securitygroup/)
-- [Network ACLs](2.2-networkacls/)
+4. Repeat those steps with subnet ```fcj-aws-subnet-public2-*```.
