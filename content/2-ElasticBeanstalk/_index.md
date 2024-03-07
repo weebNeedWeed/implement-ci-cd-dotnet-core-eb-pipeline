@@ -1,26 +1,30 @@
 ---
-title : "Firewall in VPC"
-date : "`r Sys.Date()`"
+title : "Create Elastic Beanstalk Environment"
+date :  "`r Sys.Date()`" 
 weight : 2
 chapter : false
 pre : " <b> 2. </b> "
 ---
 
-## Firewall in VPC
+#### Fundamentals of Elastic Beanstalk
 
-In this section, we will learn about the basic security features in Amazon VPC, such as the Security Group firewall feature and Network Access Control Lists.
+1. **Application**: Application is a logical collection of components like Environments, Versions and Environment Configurations.
+2. **Version**: Each Application has many versions. For example, Application with version A uses Mysql and with Version B it uses PostgreSQL.
+3. **Environment Tier**: When we create new Environment, we can choose 1 of 2 tiers:
+   - Web server: For Application that serves on HTTP/HTTPS.
+   - Worker: For application that pulls tasks of SQS Queue to process.
+4. **Environment Configuration**: The settings of the Application.
 
-### Security Groups
+In this section, we will create a High Availability Environment with AWS provided sample code.
 
-A **Security Group** acts as a virtual firewall for an EC2 Instance, allowing control over network traffic. In a VPC, an Instance can be assigned up to 5 Security Groups. It's important to note that Security Groups operate at the Instance layer and not at the Subnet layer.
+![Only eb architecture](/images/2-ElasticBeanstalk/0001.svg)
 
-> **Note:** Security Groups function at the virtual machine level, rather than the subnet level. However, each virtual machine within a subnet can be assigned to different security groups.
+#### Content 
 
-### Network ACLs
+1. [Create a VPC](2.1-createvpc/)
+2. [Enable auto-assign public IPv4 address](2.2-enablepublicip/)
+3. [Create EC2 Keypair](2.3-createkeypair/)
+4. [Create EC2 Instance Profile](2.4-instanceprofile/)
+5. [Deploy the Environment](2.5-createenv/)
+6. [Test the Environment](2.6-testenv/)
 
-A **Network Access Control List (ACL)** is an optional security layer for VPCs. It acts as a firewall to manage incoming and outgoing traffic for one or more subnets. Network ACLs can be configured with the same rules as security groups, providing an additional layer of security to the VPC.
-
-### Contents
-
-- [Security Groups](2.1-securitygroup/)
-- [Network ACLs](2.2-networkacls/)

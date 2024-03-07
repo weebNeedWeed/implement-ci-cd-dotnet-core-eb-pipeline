@@ -15,7 +15,7 @@ In this workshop, we will together discuss the fundamentals of AWS CI/CD core se
 
 #### Nội dung
 
-1. [Giới thiệu](1-Introduction)
-2. [Triển khai Elastic Beanstalk Environment](2-ElasticBeanstalk)
-3. [Triển khai CodePipeline](3-CodePipeline)
-4. [Dọn dẹp tài nguyên](4-CleanUp)
+1. [Introduction](1-Introduction)
+2. [Create Elastic Beanstalk Environment](2-ElasticBeanstalk)
+3. [Deploy CodePipeline](3-CodePipeline)
+4. [Clean up resources](4-CleanUp)

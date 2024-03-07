@@ -1,25 +1,25 @@
 ---
-title : "Kiểm thử Pipeline"
+title : "Test the Pipeline"
 date :  "`r Sys.Date()`" 
 weight : 5
 chapter : false
 pre : " <b> 3.5 </b> "
 ---
 
-#### Kiểm thử Pipeline
+#### Test the Pipeline
 
-1. Quay về giao diện Pipeline khi nãy ta vừa tạo, kiểm tra xem các **Stage** đã chạy thành công hay chưa.
+1. Go back to the Pipeline interface, check if all **Stages** has successfully run.
 
 ![0001](/images/3-CodePipeline/3.5-TestPipeline/0001.svg)
 
-2. Truy cập vào Elastic Beanstalk, kiểm tra các **Event** diễn ra khi Elastic Beanstalk vận hành để cập nhật phiên bản ứng dụng.
+2. Go to Elastic Beanstalk, view **Event** happening when Elastic Beanstalk operating to upgrade the Application to new version.
 
 ![0002](/images/3-CodePipeline/3.5-TestPipeline/0002.svg)
 
-3. Truy cập vào DNS xem kết quả.
+3. Click the DNS and view result.
 
 ![0003](/images/3-CodePipeline/3.5-TestPipeline/0003.svg)
 
 {{% notice tip %}}
-Giờ bạn hãy thử tạo một commit mới với nội dung là sửa response của endpoint ***/*** (Ví dụ sửa *"Hello world"* > *"Hello world 123"*) để quan sát cách Pipeline hoạt động nhé.
+Now you could try adding new commit to Github like changing the endpoint ***/***'s response(*"Hello world"* > *"Hello world 123"*) to see how Pipeline work.
 {{% /notice %}}

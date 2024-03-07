@@ -74,7 +74,7 @@ pre : " <b> 3.3 </b> "
 
 ![0016](/images/3-CodePipeline/3.3-CreatePipeline/0016.svg)
 
-17. Review your choice and click **Create pipeline**.
+17. Review your choices and click **Create pipeline**.
 
 ![0017](/images/3-CodePipeline/3.3-CreatePipeline/0017.svg)
 
