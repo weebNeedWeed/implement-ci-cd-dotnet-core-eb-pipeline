@@ -1,14 +1,14 @@
 ---
-title : "Thêm Policy cho Service Role"
+title : "Add policy to the Service Role"
 date :  "`r Sys.Date()`" 
 weight : 4
 chapter : false
 pre : " <b> 3.4 </b> "
 ---
 
-#### Thêm Policy cho Service Role
+#### Add policy to the Service Role
 
-1. Tìm và truy cập trang quản trị **IAM**.
+1. Find and select **IAM**.
 
 ![0001](/images/3-CodePipeline/3.4-AddRolePolicy/0001.svg)
 

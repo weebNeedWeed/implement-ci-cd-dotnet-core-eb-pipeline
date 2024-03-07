@@ -1,26 +1,25 @@
 ---
-title : "Firewall in VPC"
-date : "`r Sys.Date()`"
-weight : 2
+title : "Kiểm thử Pipeline"
+date :  "`r Sys.Date()`" 
+weight : 5
 chapter : false
-pre : " <b> 2. </b> "
+pre : " <b> 3.5 </b> "
 ---
 
-## Firewall in VPC
+#### Kiểm thử Pipeline
 
-In this section, we will learn about the basic security features in Amazon VPC, such as the Security Group firewall feature and Network Access Control Lists.
+1. Quay về giao diện Pipeline khi nãy ta vừa tạo, kiểm tra xem các **Stage** đã chạy thành công hay chưa.
 
-### Security Groups
+![0001](/images/3-CodePipeline/3.5-TestPipeline/0001.svg)
 
-A **Security Group** acts as a virtual firewall for an EC2 Instance, allowing control over network traffic. In a VPC, an Instance can be assigned up to 5 Security Groups. It's important to note that Security Groups operate at the Instance layer and not at the Subnet layer.
+2. Truy cập vào Elastic Beanstalk, kiểm tra các **Event** diễn ra khi Elastic Beanstalk vận hành để cập nhật phiên bản ứng dụng.
 
-> **Note:** Security Groups function at the virtual machine level, rather than the subnet level. However, each virtual machine within a subnet can be assigned to different security groups.
+![0002](/images/3-CodePipeline/3.5-TestPipeline/0002.svg)
 
-### Network ACLs
+3. Truy cập vào DNS xem kết quả.
 
-A **Network Access Control List (ACL)** is an optional security layer for VPCs. It acts as a firewall to manage incoming and outgoing traffic for one or more subnets. Network ACLs can be configured with the same rules as security groups, providing an additional layer of security to the VPC.
+![0003](/images/3-CodePipeline/3.5-TestPipeline/0003.svg)
 
-### Contents
-
-- [Security Groups](2.1-securitygroup/)
-- [Network ACLs](2.2-networkacls/)
+{{% notice tip %}}
+Giờ bạn hãy thử tạo một commit mới với nội dung là sửa response của endpoint ***/*** (Ví dụ sửa *"Hello world"* > *"Hello world 123"*) để quan sát cách Pipeline hoạt động nhé.
+{{% /notice %}}

@@ -28,56 +28,56 @@ pre : " <b> 3.3 </b> "
 
 5. In **Advanced settings**, select **Custom location** then select **Bucket** we have prepared.
 
-![0005](images/3-CodePipeline/3.3-CreatePipeline/0005.svg)
+![0005](/images/3-CodePipeline/3.3-CreatePipeline/0005.svg)
 
-6. Đối với **Source provider** ta chọn **Github(Version 2)**. 
+6. For **Source provider** select **Github(Version 2)**. 
 
 ![0006](/images/3-CodePipeline/3.3-CreatePipeline/0006.svg)
 
-7. Ta chọn **Connection** đã tạo trước đó. Đồng thời chọn Repository trên Github.
+7. Select **Connection** we have created then choose the repository to deploy.
 
 ![0007](/images/3-CodePipeline/3.3-CreatePipeline/0007.svg)
 
-8. Chọn nhánh **master** và **Output artifact format** là **CodePipeline default**.
+8. Select the **master** branch and select **Output artifact format** as **CodePipeline default**.
 
 ![0008](/images/3-CodePipeline/3.3-CreatePipeline/0008.svg)
 
-9. Chọn **Trigger** là **No filter**, chọn **Next**.
+9. Select **Trigger** as **No filter**, then click **Next**.
 
 ![0009](/images/3-CodePipeline/3.3-CreatePipeline/0009.svg)
 
-10. Chọn **Build provider** là **AWS CodeBuild**, tiếp theo chọn **Create project**.
+10. Select **Build provider** as **AWS CodeBuild**, then click **Create project**.
 
 ![0010](/images/3-CodePipeline/3.3-CreatePipeline/0010.svg)
 
-11. **Project name** nhập ```fcj-aws-proj```.
+11. **Project name** enter ```fcj-aws-proj```.
 
 ![0011](/images/3-CodePipeline/3.3-CreatePipeline/0011.svg)
 
-12. Chọn **New service role** sau đó nhập **Role name**.
+12. Select **New service role** then enter **Role name**.
 
 ![0012](/images/3-CodePipeline/3.3-CreatePipeline/0012.svg)
 
-13. Chọn **Use a buildspec file**.
+13. Select **Use a buildspec file**.
 
 ![0013](/images/3-CodePipeline/3.3-CreatePipeline/0013.svg)
 
-14. Chọn **Cloud watch logs**, nhập **Group name** và **Stream name prefix**. Chọn **Continue to CodePipeline**.
+14. Check **Cloud watch logs** checkbox, enter **Group name** and **Stream name prefix**. Click **Continue to CodePipeline**.
 
 ![0014](/images/3-CodePipeline/3.3-CreatePipeline/0014.svg)
 
-15. Chọn **Build type** là **Single build**. Chọn **Next**.
+15. Select **Build type** as **Single build**. Select **Next**.
 
 ![0015](/images/3-CodePipeline/3.3-CreatePipeline/0015.svg)
 
-16. Chọn **Deploy provider** là **AWS Elastic Beanstalk**. Chọn **Application name** và **Environment name** ta đã tạo trước đó.
+16. Select **Deploy provider** as **AWS Elastic Beanstalk**. Select **Application name** and **Environment name** created in the previous steps.
 
 ![0016](/images/3-CodePipeline/3.3-CreatePipeline/0016.svg)
 
-17. Xem lại cấu hình và chọn **Create pipeline**.
+17. Review your choice and click **Create pipeline**.
 
 ![0017](/images/3-CodePipeline/3.3-CreatePipeline/0017.svg)
 
 {{% notice warning %}}
-Dù ta đã tạo thành công Pipeline nhưng Pipeline của ta vẫn chưa thể chạy được. Đó là vì **Service role** CodePipeline tự động tạo **không có quyền** truy cập đến **Elastic Beanstalk** nên ta sẽ phải [cấp quyền cho Service role](/3-codepipeline/3.4-addrolepolicy).
+Although we have successfully created a new Pipeline, our Pipeline still can't run. That because the **CodePipeline Service Role** doesn't have permissions to perform actions on the **Elastic Beanstalk** environment. So that we have to [add policy to the Service Role](/3-codepipeline/3.4-addrolepolicy) to make it work.
 {{% /notice %}}
